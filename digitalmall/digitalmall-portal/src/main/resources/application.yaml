@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: digitalmall-portal
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource              # 当前数据源操作类型
+    driver-class-name: com.mysql.cj.jdbc.Driver                 # mysql 驱动
+    url: jdbc:mysql://127.0.0.1:3306/digital_mall?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+    username: root
+    password: 2580147
+  servlet:
+    multipart:
+      enabled: true #开启文件上传
+      max-file-size: 10MB #上传文件最大 10MB
+#mapper 文件和 mapper 配置文件位置或文件名不同需要配置
+mybatis-plus:
+  mapper-locations: classpath:mapper/*.xml
+  #开启实体类与数据库映射驼峰命令识别
+  configuration:
+    map-underscore-to-camel-case: true
+server:
+  port: 8082

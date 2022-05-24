@@ -1,0 +1,163 @@
+﻿<!DOCTYPE html>
+<html class="" lang="en">
+<head>
+    <title>Hitech</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" th:href="@{assets/css/bootstrap.min.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{assets/css/all.min.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{assets/css/owl.theme.default.min.css}">
+    <link rel="shortcut icon" type="image/x-icon" th:href="@{assets/img/Favicon.ico}">
+    <link rel="stylesheet" type="text/css" th:href="@{assets/css/animate.min.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{assets/css/fontawesome.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{assets/css/fontawesome.min.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{assets/css/style.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{assets/css/media.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{assets/css/responsive.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{assets/css/owl.carousel.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{assets/css/owl.theme.default.css}">
+
+
+</head>
+<body>
+<div th:insert="svg::svg"></div>
+<div th:insert="header::header"></div>
+<div th:insert="menu::menu"></div>
+
+
+<!-- cart page -->
+<div id="cart_page" class="cart-page animate__animated animate__fadeInUp">
+    <div class="sp_header bg-white p-3 ">
+        <div class="container custom_container ">
+            <div class="row ">
+                <div class="col-12 ">
+                    <ul>
+                        <li class="d-inline-block font-weight-bolder"><a href="index.html">home</a></li>
+                        <li class="d-inline-block hr_ font-weight-bolder"><a href="#">cart</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container custom_container ">
+        <div class="row">
+            <div class="col-12 col-lg-8">
+                <div class="card">
+
+                    <div class="card-header cart_header bg-white">
+                        <div class="card-title mb-0">
+                            <div class="row">
+                                <div class="col-12">
+                                    <h5 class="mb-0"><i class="fas fa-shopping-cart"></i>购物车</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card-body cart_body">
+                        <table>
+                            <tr th:each="item:${allProduct}">
+                                <div class="row">
+                                    <div class="col-12 col-md-6 pr-0">
+                                        <div class="d-flex">
+                                            <div class=" col-xl-4 col-lg-5 col-md-4 col-4 px-0">
+                                                <a href="#"><img th:src="${item.image}"
+                                                                 class="fst-image mx-auto d-block img-fluid"
+                                                                 alt="product_13"></a>
+                                            </div>
+                                            <div class=" col-xl-8 col-lg-7 col-md-8 col-8 pr-0">
+                                                <h4 class="product-name font-weight-bold mb-2 mb-sm-3 mb-xl-3 mt-sm-2 mt-md-2">
+                                                    <a href="#" th:text="${item.title}"></a>
+                                                </h4>
+                                                <div><span class="font-weight-bolder price">$69.00 </span>
+                                                    <del class="text-muted">$100.00</del>
+                                                </div>
+                                                <div class="my-1 f_13">
+                                                    <span>版本:</span>
+                                                    <span>12GB+256GB</span>
+                                                </div>
+                                                <div class="f_13">
+                                                    <span>颜色:</span>
+                                                    <span>亮黑</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-md-6 mt-4">
+                                        <div class="d-flex">
+                                            <div class="col-md-3 col-sm-4 col-5 text-left text-md-right my-2 ">
+                                                <span class="font-weight-bold" th:text="${item.price}"></span>
+                                            </div>
+                                            <div class="col-md-7 col-sm-4 col-5">
+                                                <input type="number" class="form-control border" placeholder="$0">
+                                            </div>
+                                            <div class="col-md-2 col-sm-4 col-2 my-2 mt-1 text-right text-md-left">
+                                                <a href="#"><i class="fas fa-trash-alt"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </tr>
+                        </table>
+                        <hr>
+                    </div>
+
+                    <div class="card-footer">
+                        <div class="row">
+                            <div class="col-6 col-sm-7 text-right">
+                                <div class="my-2 font-weight-bold">
+                                    <span>total:</span>
+                                    <span>$56.00</span>
+                                </div>
+                            </div>
+                            <div class="col-6 col-sm-5">
+                                <a href="checkout.html"
+                                   class="btn btn-success btn-block f_13 font-weight-bold">结算</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-12 col-lg-4">
+                <div class="border rounded bg-white final_payment">
+                    <div class="card-body  border-bottom">
+                        <p class="text-muted">5 items</p>
+                        <p class="font-weight-bolder">show details</p>
+                        <div>
+                            <span class="font-weight-bold">subtotal</span>
+                            <span class="float-right font-weight-bold">$94.00</span>
+                        </div>
+                    </div>
+                    <div class="card-body ">
+                        <div>
+                            <span class="font-weight-bold">total(tax excl.)</span>
+                            <span class="float-right font-weight-bold">$94.00</span>
+                        </div>
+                        <div>
+                            <span class="font-weight-bold">taxes</span>
+                            <span class="float-right font-weight-bold">$9.00</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+<!-- cart page -->
+
+
+<div th:insert="footer::footer"></div>
+<script th:src="@{assets/js/jquery-3.4.1.min.js}"></script>
+<script th:src="@{assets/js/owl.carousel.js}"></script>
+<script th:src="@{assets/js/bootstrap.min.js}"></script>
+<script th:src="@{assets/js/popper.min.js}"></script>
+<script th:src="@{assets/js/all.min.js}"></script>
+<script th:src="@{assets/js/index.js}"></script>
+<script th:src="@{assets/js/wow.min.js}"></script>
+</body>
+</html>

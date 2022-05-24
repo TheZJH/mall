@@ -1,0 +1,277 @@
+﻿<!DOCTYPE html>
+<html class="" lang="en">
+<head>
+    <title>Checkout</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" th:href="@{assets/css/bootstrap.min.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{assets/css/all.min.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{assets/css/owl.theme.default.min.css}">
+    <link rel="shortcut icon" type="image/x-icon" th:href="@{assets/img/Favicon.ico}">
+    <link rel="stylesheet" type="text/css" th:href="@{assets/css/animate.min.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{assets/css/fontawesome.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{assets/css/fontawesome.min.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{assets/css/style.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{assets/css/media.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{assets/css/responsive.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{assets/css/owl.carousel.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{assets/css/owl.theme.default.css}">
+
+
+</head>
+<body>
+<div th:insert="svg::svg"></div>
+
+<div th:insert="header::header"></div>
+
+<div th:insert="menu::menu"></div>
+
+<!-- checkout page -->
+
+
+<div id="checkout_page" class="checkout-page animate__animated animate__fadeInUp">
+
+
+    <div class="sp_header bg-white p-3 ">
+        <div class="container custom_container ">
+            <div class="row ">
+                <div class="col-12 ">
+                    <ul>
+                        <li class="d-inline-block font-weight-bolder"><a th:href="@{/index}">主页</a></li>
+                        <li class="d-inline-block hr_ font-weight-bolder"><a href="#">checkout</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container custom_container">
+        <div class="row">
+            <div class="col-lg-8 col-12">
+
+                <div class="accordion" id="check_out_toggle">
+                    <div class="card rounded mb-2">
+                        <div class="card-header bg-white" id="checkout_info">
+                            <h2 class="mb-0">
+                                <button class="btn btn-link btn-block text-left text-body p-0 font-weight-bold"
+                                        type="button" data-toggle="collapse" data-target="#check_info"
+                                        aria-expanded="true" aria-controls="check_info">
+                                    个人信息<span class="float-right"><i
+                                        class="fas fa-angle-down"></i></span>
+                                </button>
+                            </h2>
+                        </div>
+
+                        <div id="check_info" class="collapse show" aria-labelledby="checkout_info"
+                             data-parent="#check_out_toggle">
+                            <div class="card-body">
+                                <div class="page-content">
+                                    <div class="form-group">
+                                        <label class="font-weight-bold">用户名</label>
+                                        <span th:text="${session.user.username}"></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="font-weight-bold">真实姓名</label>
+                                        <span th:text="${session.user.realname}"></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="font-weight-bold">手机号</label>
+                                        <span th:text="${session.user.phone}"></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="font-weight-bold">邮箱</label>
+                                        <span th:text="${session.user.email}"></span>
+                                    </div>
+                                    <span></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!--个人信息-->
+                    <div class="card rounded mb-2">
+                        <div class="card-header bg-white" id="chechout_add">
+                            <h2 class="mb-0">
+                                <button class="btn btn-link btn-block text-left collapsed text-body p-0 font-weight-bold"
+                                        type="button" data-toggle="collapse" data-target="#check_add"
+                                        aria-expanded="false" aria-controls="check_add">
+                                    地址<span class="float-right"><i class="fas fa-angle-down"></i></span>
+                                </button>
+                            </h2>
+                        </div>
+                        <div id="check_add" class="collapse" aria-labelledby="chechout_add"
+                             data-parent="#check_out_toggle">
+                            <div class="card-body">
+
+                                <div id="c_address" class="page-content">
+
+
+                                    <div class="form-group">
+                                        <label class="font-weight-bold">省份</label>
+                                        <span th:text="${userAddress.province}"></span>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="font-weight-bold">市</label>
+                                        <span th:text="${userAddress.city}"></span>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="font-weight-bold">区</label>
+                                        <span th:text="${userAddress.region}"></span>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="font-weight-bold">详细信息</label>
+                                        <span th:text="${userAddress.detailAddress}"></span>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div> <!-- 地址信息 -->
+                    <div class="card rounded mb-2">
+                        <div class="card-header bg-white" id="checkout_shipping">
+                            <h2 class="mb-0">
+                                <button class="btn btn-link btn-block text-left collapsed text-body p-0 font-weight-bold"
+                                        type="button" data-toggle="collapse" data-target="#check_ship"
+                                        aria-expanded="false" aria-controls="check_ship">
+                                    订单信息<span class="float-right"><i class="fas fa-angle-down"></i></span>
+                                </button>
+                            </h2>
+                        </div>
+                        <div id="check_ship" class="collapse" aria-labelledby="checkout_shipping"
+                             data-parent="#check_out_toggle">
+                            <div class="card-body">
+
+                                <div id="ship_check" class="page-content">
+                                    <label class="font-weight-bold">价格</label>
+                                    <span th:text="${orders.payment}"></span>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div> <!-- 订单信息 -->
+                    <div class="card rounded mb-2">
+                        <div class="card-header bg-white" id="checkout_payment">
+                            <h2 class="mb-0">
+                                <button class="btn btn-link btn-block text-left collapsed text-body p-0 font-weight-bold"
+                                        type="button" data-toggle="collapse" data-target="#check_payment"
+                                        aria-expanded="false" aria-controls="check_payment">
+                                    支付信息<span class="float-right"><i class="fas fa-angle-down"></i></span>
+                                </button>
+                            </h2>
+                        </div>
+                        <div id="check_payment" class="collapse" aria-labelledby="checkout_payment"
+                             data-parent="#check_out_toggle">
+                            <div class="card-body">
+
+                                <div id="pay_check" class="page-content">
+                                    <form>
+
+                                        <div class="form-group text-left">
+                                            <label class="font-weight-bold">payment Method</label><br>
+                                            <span class="form-check d-inline-block">
+									          <input class="form-check-input" type="radio" name="gridRadios"
+                                                     id="pay_by_check" checked>
+									          <label class="form-check-label" for="pay_by_check">
+									            pay by check
+									          </label>
+									        </span>
+                                            <span class="form-check d-inline-block ml-2">
+									          <input class="form-check-input" type="radio" name="gridRadios"
+                                                     id="pay_by_bank">
+									          <label class="form-check-label" for="pay_by_bank">
+									            pay by bank 
+									          </label>
+									        </span>
+                                        </div>
+                                        <div class="form-group form-check">
+                                            <input type="checkbox" class="form-check-input" id="user_pay_check">
+                                            <label class="form-check-label" for="user_pay_check">I accept the Terms
+                                                of
+                                                Use & Privacy Policy</label>
+                                        </div>
+                                        <div class="text-center">
+                                            <button type="submit" class="btn btn-primary f_13">
+                                                Order with an obligation to pay
+                                            </button>
+                                        </div>
+                                    </form>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div> <!-- 支付信息 -->
+                </div>
+
+            </div>
+            <div class="col-lg-4 col-12 ">
+                <div class="border rounded bg-white final_payment">
+                    <div class="card-body  border-bottom">
+                        <p class="text-muted">5 items</p>
+                        <p class="font-weight-bolder">show details</p>
+                        <div>
+                            <span class="font-weight-bold">subtotal</span>
+                            <span class="float-right font-weight-bold">$94.00</span>
+                        </div>
+                        <div>
+                            <span class="font-weight-bold">shipping</span>
+                            <span class="float-right font-weight-bold">$9.00</span>
+                        </div>
+                    </div>
+                    <div class="card-body ">
+                        <div>
+                            <span class="font-weight-bold">total(tax excl.)</span>
+                            <span class="float-right font-weight-bold">$94.00</span>
+                        </div>
+                        <div>
+                            <span class="font-weight-bold">taxes</span>
+                            <span class="float-right font-weight-bold">$9.00</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+
+<!-- checkout page -->
+
+<div th:insert="footer::footer"></div>
+
+
+<script th:src="@{assets/js/jquery-3.4.1.min.js}"></script>
+<script th:src="@{assets/js/owl.carousel.js}"></script>
+<script th:src="@{assets/js/bootstrap.min.js}"></script>
+<script th:src="@{assets/js/popper.min.js}"></script>
+<script th:src="@{assets/js/all.min.js}"></script>
+<script th:src="@{assets/js/index.js}"></script>
+<script th:src="@{assets/js/wow.min.js}"></script>
+<script>
+    // Disable form submissions if there are invalid fields
+    (function () {
+        'use strict';
+        window.addEventListener('load', function () {
+            // Get the forms we want to add validation styles to
+            var forms = document.getElementsByClassName('needs-validation');
+            // Loop over them and prevent submission
+            var validation = Array.prototype.filter.call(forms, function (form) {
+                form.addEventListener('submit', function (event) {
+                    if (form.checkValidity() === false) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                    }
+                    form.classList.add('was-validated');
+                }, false);
+            });
+        }, false);
+    })();
+</script>
+
+
+</body>
+</html>

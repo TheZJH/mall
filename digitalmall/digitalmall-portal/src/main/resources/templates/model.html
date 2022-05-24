@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>model</title>
+    <link rel="stylesheet" type="text/css" th:href="@{assets/css/bootstrap.min.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{assets/css/all.min.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{assets/css/owl.theme.default.min.css}">
+    <link rel="shortcut icon" type="image/x-icon" th:href="@{assets/img/Favicon.ico}">
+    <link rel="stylesheet" type="text/css" th:href="@{assets/css/animate.min.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{assets/css/fontawesome.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{assets/css/fontawesome.min.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{assets/css/style.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{assets/css/media.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{assets/css/responsive.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{assets/css/owl.carousel.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{assets/css/owl.theme.default.css}">
+</head>
+<body>
+<div th:fragment="model">
+    <!-- cart-model -->
+    <div class="modal fade" id="cart_model" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="modal-title f_13 font-weight-bold">Product successfully added to your shopping cart</div>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+
+                    <div class="row">
+                        <div class="col-sm-4 col-xs-12 mb-3	">
+                            <img src="assets/img/product/product_13.jpg"
+                                 class="fst-image mx-auto d-block img-fluid border rounded" alt="product_13">
+                        </div>
+                        <div class="col-sm-8 col-xs-12 ">
+                            <h6 class="font-weight-bold">Hummingbird printed t-shirt</h6>
+                            <div class="font-weight-bold pb-1">$19.12</div>
+                            <span class="font-weight-bold f_13 pb-1">Size: S</span><br>
+                            <span class="font-weight-bold f_13 pb-1">Color: White</span><br>
+                            <span class="font-weight-bold f_13 pb-1">Qty: 2</span>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class=" col-12 ">
+                            <div class="border rounded bg-white final_payment">
+                                <div class="card-body  border-bottom">
+                                    <p class="text-muted">5 items</p>
+                                    <p class="font-weight-bolder">show details</p>
+                                    <div>
+                                        <span class="font-weight-bold">subtotal</span>
+                                        <span class="float-right font-weight-bold">$94.00</span>
+                                    </div>
+                                    <div>
+                                        <span class="font-weight-bold">shipping</span>
+                                        <span class="float-right font-weight-bold">$9.00</span>
+                                    </div>
+                                </div>
+                                <div class="card-body ">
+                                    <div>
+                                        <span class="font-weight-bold">total(tax excl.)</span>
+                                        <span class="float-right font-weight-bold">$94.00</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <a class="btn btn-primary mt-2 f_13 px-3 py-2 rounded" data-dismiss="modal">close</a>
+                    <a href="checkout.html" class="btn btn-primary mt-2 f_13 px-3 py-2 rounded">continue</a>
+                </div>
+            </div>
+        </div>
+    </div> <!-- cart_model -->
+
+
+    <!-- eye-model -->
+    <div class="modal fade" id="eye_model" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-sm-5 col-12">
+                            <img src="assets/img/product/product_13.jpg"
+                                 class="fst-image mx-auto d-block img-fluid border rounded" alt="product_13">
+                        </div>
+                        <div class="col-sm-7 col-12">
+                            <h5 class="font-weight-bold border-bottom me_name">Aliquam Top Erat Volutpat</h5>
+                            <div class="font-weight-bold border-bottom me_price">$19.12</div>
+                            <div class="my-2 border-bottom me_des">Fashion has been creating well-designed collections since
+                                2010.
+                            </div>
+                            <div class="me_quan">
+                                <div class="sp_counter ">
+
+                                    <div class="input-group">
+		                <span class="input-group-btn">
+		              		<button type="button" class="btn btn-default btn-number" disabled="disabled"
+                                    data-type="minus" data-field="quant[1]"><span class="minus">-</span></button>
+		                </span>
+                                        <input type="number" name="quant[1]" class="form-control input-number" value="1"
+                                               min="1" max="10">
+                                        <span class="input-group-btn">
+		                	<button type="button" class="btn btn-default btn-number" data-type="plus"
+                                    data-field="quant[1]"><span class="plus">+</span></button>
+		                </span>
+                                    </div>
+
+                                </div>
+                                <span>
+			      	<a href="cart.html" class="btn btn-primary primary mt-3">add to cart</a>
+			      </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>  <!-- eye_model -->
+
+    <!-- compare-model -->
+    <div class="modal fade" id="compare_model" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body text-center">
+                    <p>
+                        <svg width="30px" height="30px">
+                            <use xlink:href="#checked"></use>
+                        </svg>
+                    </p>
+                    <h5>Compare list updated!</h5>
+                    <p class="text-muted font-weight-bold">Product successfully removed from the product comparison!</p>
+                    <div class="text-danger font-weight-bold">Go to Compare</div>
+                </div>
+
+            </div>
+        </div>
+    </div> <!-- compare_model -->
+
+    <!-- heart-model -->
+    <div class="modal fade" id="heart_model" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body text-center">
+                    <p>
+                        <svg width="30px" height="30px">
+                            <use xlink:href="#checked"></use>
+                        </svg>
+                    </p>
+                    <p class="text-muted font-weight-bold">You must be logged in to manage your wishlist.</p>
+                    <div class="text-danger font-weight-bold">Go to wishlist</div>
+                </div>
+
+            </div>
+        </div>
+    </div> <!-- heart_model -->
+</div>
+<script th:src="@{assets/js/jquery-3.4.1.min.js}"></script>
+<script th:src="@{assets/js/owl.carousel.js}"></script>
+<script th:src="@{assets/js/bootstrap.min.js}"></script>
+<script th:src="@{assets/js/popper.min.js}"></script>
+<script th:src="@{assets/js/all.min.js}"></script>
+<script th:src="@{assets/js/index.js}"></script>
+<script th:src="@{assets/js/wow.min.js}"></script>
+</body>
+</html>

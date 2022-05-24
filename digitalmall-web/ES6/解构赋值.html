@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<script>
+    //1、本质上，这种写法属于“模式匹配”，只要等号两边的模式相同，左边的变量就会被赋予对应的值。
+    let [foo, [
+        [bar], baz
+    ]] = [1, [
+        [2], 3
+    ]]
+    //2、对象的解构赋值
+    let {
+        bar,
+        foo
+    } = {
+        foo: 'aaa',
+        bar: 'bbb',
+    }
+
+    function log(x, y) {
+        y = y || 'World';
+        console.log(x, y);
+    }
+    log('Hello')
+    var point = function () {
+
+    }
+
+    var test = function (x, y = 'World') {
+        this.x = x;
+        this.y = y;
+        console.log(x, y);
+    }
+    const tes = new test();
+    tes.x
+    tes.y
+    // 使用箭头定义函数
+    var f = v => v;
+    // 等同于
+    var f = function (v) {
+        return v;
+    }
+    var sum = (num1, num2) => num1 + num2;
+    //如果箭头函数的代码块多于一条语句，使用大括号，使用return语句
+    var sum = (num1, num2) => {
+        return num1 + num2;
+    }
+    methods: {
+        checkTo
+    }
+</script>

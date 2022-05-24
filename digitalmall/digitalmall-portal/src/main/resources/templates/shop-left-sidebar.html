@@ -1,0 +1,304 @@
+﻿<!DOCTYPE html>
+<html class="" lang="zxx">
+<head>
+    <title>Hitech</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" th:href="@{assets/css/bootstrap.min.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{assets/css/all.min.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{assets/css/owl.theme.default.min.css}">
+    <link rel="shortcut icon" type="image/x-icon" th:href="@{assets/img/Favicon.ico}">
+    <link rel="stylesheet" type="text/css" th:href="@{assets/css/animate.min.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{assets/css/fontawesome.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{assets/css/fontawesome.min.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{assets/css/style.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{assets/css/media.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{assets/css/responsive.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{assets/css/owl.carousel.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{assets/css/owl.theme.default.css}">
+
+
+</head>
+<body>
+<div th:insert="svg::svg"></div>
+
+<div th:insert="model::model"></div>
+
+
+<div th:insert="header::header"></div>
+
+<div th:insert="menu::menu"></div>
+<!-- shop page -->
+
+
+<div id="shop_page" class="shop-page animate__animated animate__fadeInUp">
+
+
+    <div class="sp_header bg-white p-3">
+        <div class="container custom_container ">
+            <div class="row ">
+                <div class="col-12 ">
+                    <ul>
+                        <li class="d-inline-block font-weight-bolder"><a href="index.html">home</a></li>
+                        <li class="d-inline-block hr_ font-weight-bolder"><a href="#">shop</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container custom_container">
+        <div class="row">
+            <div class="col-lg-3 col-md-4">
+                <div class="shop_sidebar border card-body rounded bg-white">
+
+                    <h2 class="text-uppercase card-title  font-weight-bold d-md-block d-none">filter by</h2>
+
+                    <div class="s_filter mt-0">
+                        <h6 class="text-uppercase  border-bottom font-weight-bold">Range
+                            <button class="toggle collapsed" data-toggle="collapse"
+                                    data-target="#shop_range_collapse"></button>
+                        </h6>
+                        <div class="collapse " id="shop_range_collapse">
+                            <div class="col-md-6 col-sm-12 pl-0 pr-md-2 pr-sm-0 pr-0">
+                                <label class="font-weight-bolder">min</label>
+                                <input type="number" class="form-control" placeholder="$0">
+                            </div>
+                            <div class="col-md-6 col-sm-12 pr-0 pl-md-2 pl-sm-0 pl-0 ">
+                                <label class="font-weight-bolder">max</label>
+                                <input type="number" class="form-control" placeholder="$0">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="s_filter form">
+                        <h6 class="text-uppercase  border-bottom font-weight-bold">color
+                            <button class="toggle collapsed" data-toggle="collapse"
+                                    data-target="#shop_color_collapse"></button>
+                        </h6>
+                        <div class="collapse" id="shop_color_collapse">
+                            <label class="form-check">
+                                <input class="form-check-input" type="checkbox" value="">
+                                <span class="form-check-label font-weight-bolder">pink</span>
+                                <span class="text-right float-right font-weight-bolder">(1)</span>
+                            </label>
+                            <label class="form-check">
+                                <input class="form-check-input " type="checkbox" value="">
+                                <span class="form-check-label font-weight-bolder">yellow</span>
+                                <span class="text-right float-right font-weight-bolder">(1)</span>
+                            </label>
+                            <label class="form-check">
+                                <input class="form-check-input" type="checkbox" value="">
+                                <span class="form-check-label font-weight-bolder">white</span>
+                                <span class="text-right float-right font-weight-bolder">(1)</span>
+                            </label>
+                            <label class="form-check">
+                                <input class="form-check-input" type="checkbox" value="">
+                                <span class="form-check-label font-weight-bolder">black</span>
+                                <span class="text-right float-right font-weight-bolder">(1)</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="s_filter">
+                        <h6 class="text-uppercase border-bottom font-weight-bold">brand
+                            <button class="toggle collapsed" data-toggle="collapse"
+                                    data-target="#shop_brand_collapse"></button>
+                        </h6>
+                        <div class="collapse" id="shop_brand_collapse">
+                            <label class="form-check">
+                                <input class="form-check-input" type="checkbox" value="">
+                                <span class="form-check-label font-weight-bolder">brand1</span>
+                                <span class="text-right float-right font-weight-bolder">(1)</span>
+                            </label>
+                            <label class="form-check">
+                                <input class="form-check-input" type="checkbox" value="">
+                                <span class="form-check-label font-weight-bolder">brand1</span>
+                                <span class="text-right float-right font-weight-bolder">(1)</span>
+                            </label>
+                            <label class="form-check">
+                                <input class="form-check-input" type="checkbox" value="">
+                                <span class="form-check-label font-weight-bolder">another brand</span>
+                                <span class="text-right float-right font-weight-bolder">(1)</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="s_filter">
+                        <h6 class="text-uppercase border-bottom font-weight-bold">size
+                            <button class="toggle collapsed" data-toggle="collapse"
+                                    data-target="#shop_size_collapse"></button>
+                        </h6>
+                        <div class="collapse" id="shop_size_collapse">
+                            <label class="form-check">
+                                <input class="form-check-input" type="checkbox" value="">
+                                <span class="form-check-label font-weight-bolder">s</span>
+                                <span class="text-right float-right font-weight-bolder">(1)</span>
+                            </label>
+                            <label class="form-check">
+                                <input class="form-check-input" type="checkbox" value="">
+                                <span class="form-check-label font-weight-bolder">m</span>
+                                <span class="text-right float-right font-weight-bolder">(1)</span>
+                            </label>
+                            <label class="form-check">
+                                <input class="form-check-input" type="checkbox" value="">
+                                <span class="form-check-label font-weight-bolder">l</span>
+                                <span class="text-right float-right font-weight-bolder">(1)</span>
+                            </label>
+                            <label class="form-check">
+                                <input class="form-check-input" type="checkbox" value="">
+                                <span class="form-check-label font-weight-bolder">xl</span>
+                                <span class="text-right float-right font-weight-bolder">(1)</span>
+                            </label>
+                        </div>
+                    </div>
+
+
+                    <button data-search-url="#" class="btn btn-primary clear_btn ">Clear all</button>
+
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-9 col-md-8">
+
+                <div class="row shop_grid_list_row mb-5 bg-white p-2 p-md-1 mb-lg-3 mx-0">
+                    <div class="col-xl-2 col-sm-2 col-4 pl-0">
+                        <a href="#" id="grid" class="btn">
+                            <span class="grid_icon  p-1"><i class="fas fa-th"></i></span>
+                        </a>
+                        <a href="#" id="list" class="btn">
+                            <span class="list_icon  p-1"><i class="fas fa-list"></i></span>
+                        </a>
+                    </div>
+                    <div class="col-xl-4 d-xl-inline-block d-lg-none d-sm-none d-none">
+                        <div class="show-product pt-1"><a href="#"> There are 12 products. </a></div>
+                    </div>
+                    <div class="col-xl-6 col-sm-10 col-8 pr-0 sortpro">
+                        <div class="sort-by text-right">
+                            <div class="sort">
+                                <select class="custom-select" id="inlineFormCustomSelect">
+                                    <option selected>Relevance...</option>
+                                    <option value="1">Relevance</option>
+                                    <option value="2">Name, A to Z</option>
+                                    <option value="3">Name, Z to A</option>
+                                    <option value="3">Price, low to high</option>
+                                    <option value="3">Price, high to low</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="products" class="row">
+                    <table>
+                        <tr th:each="item:${allProducts}">
+                            <div class="item col-xl-3">
+                                <div class="product_thumb bg-white rounded">
+                                    <div class="pro_image">
+                                        <a th:href="@{'/getProduct?id='+${item.getId()}}"><img th:src="${item.image}"
+                                                                              class="fst-image mx-auto d-block img-fluid"
+                                                                              alt="product_1"></a>
+
+                                    </div>
+
+                                    <div class="text-center main_text pt-3">
+                                        <div>
+                                            <div class="star mb-2">
+                                                <i class="fa fa-star" aria-hidden="true"></i>
+                                                <i class="fa fa-star" aria-hidden="true"></i>
+                                                <i class="fa fa-star" aria-hidden="true"></i>
+                                                <i class="fa fa-star" aria-hidden="true"></i>
+                                                <i class="fa fa-star" aria-hidden="true"></i>
+                                            </div>
+                                            <h2 class="pro-heading  font-weight-bolder mb-1	"><a
+                                                    th:href="@{'/getProduct?id='+${item.getId()}}" th:text="${item.productName}"></a>
+                                            </h2>
+
+                                            <span><span class="font-weight-bold price" th:text="${item.price}"></span>
+
+                                            <p class="description mt-1 text-muted" th:text="${item.title}"></p>
+
+                                            <div class="button-group">
+                                                <a href="#" class="symbol" data-toggle="modal"
+                                                   data-target="#cart_model">
+                                                    <svg width="20px" height="19px">
+                                                        <use xlink:href="#pro_cart"></use>
+                                                    </svg>
+                                                </a>
+                                                <a href="#" class="symbol" data-toggle="modal"
+                                                   data-target="#compare_model">
+                                                    <svg width="20px" height="19px">
+                                                        <use xlink:href="#pro_compare"></use>
+                                                    </svg>
+                                                </a>
+                                                <a href="#" class="symbol" data-toggle="modal" data-target="#eye_model">
+                                                    <svg width="20px" height="19px">
+                                                        <use xlink:href="#pro_eye"></use>
+                                                    </svg>
+                                                </a>
+                                                <a href="#" class="symbol" data-toggle="modal"
+                                                   data-target="#heart_model">
+                                                    <svg width="20px" height="19px">
+                                                        <use xlink:href="#pro_heart"></use>
+                                                    </svg>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> <!-- item -->
+                        </tr>
+                    </table>
+
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <div class="container custom_container">
+        <div class="row">
+            <div class="col-12">
+                <nav class="float-right mt-5 mt-col-3">
+                    <ul class="pagination">
+                        <li class="page-item">
+                            <a class="page-link" href="#">
+                                <span aria-hidden="true">&laquo;</span>
+                            </a>
+                        </li>
+                        <li class="page-item"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">
+                                <span aria-hidden="true">&raquo;</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+
+</div>    <!-- shop_page -->
+
+
+<!-- shop page -->
+
+
+<div th:insert="footer::footer"></div>
+
+<script th:src="@{assets/js/jquery-3.4.1.min.js}"></script>
+<script th:src="@{assets/js/owl.carousel.js}"></script>
+<script th:src="@{assets/js/bootstrap.min.js}"></script>
+<script th:src="@{assets/js/popper.min.js}"></script>
+<script th:src="@{assets/js/all.min.js}"></script>
+<script th:src="@{assets/js/index.js}"></script>
+<script th:src="@{assets/js/wow.min.js}"></script>
+</body>
+</html>

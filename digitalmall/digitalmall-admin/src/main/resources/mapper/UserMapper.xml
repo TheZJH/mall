@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.thezjh.digitalmall.dao.UserMapper">
+    <select id="getUserByUsername" resultType="com.thezjh.digitalmall.entity.SysUser">
+        select *
+        from users
+        where username = #{username}
+    </select>
+    <select id="getAllUsers" resultType="com.thezjh.digitalmall.entity.SysUser">
+        select *
+        from users
+    </select>
+    <delete id="deleteUserById">
+        delete
+        from users
+        where id = #{id}
+    </delete>
+    <update id="adminChangeUser" parameterType="com.thezjh.digitalmall.common.dto.UpdateUserDto">
+        update users
+        set username=#{username},
+            realname=#{realname},
+            role=#{role},
+            phone=#{phone}
+        where id = #{id}
+    </update>
+</mapper>

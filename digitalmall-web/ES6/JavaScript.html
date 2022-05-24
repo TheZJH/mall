@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>JS 函数回调</h2>
+<p id="demo">你好</p>
+<button id="change">改变</button>
+</body>
+<script>
+    let hello="Hello"
+//document.getElementById("demo").innerHTML="Hello World!"
+    //回调函数
+
+    const test=function myFunction(){
+        document.getElementById("demo").innerHTML="I Love You!"
+    }
+    test()
+    //setTimeout(test,3000)
+    //let promise=new Promise()
+    //getElementById是方法，innerHtml是属性
+    let change=function (){
+        document.getElementById("demo").innerHTML="I Dont You!"
+    }
+
+    //为change函数指定事件
+
+    function displaydate(){
+        document.getElementById("demo").innerHTML=Date();
+    }
+    document.getElementById("change").onclick=displaydate;
+</script>
+</html>

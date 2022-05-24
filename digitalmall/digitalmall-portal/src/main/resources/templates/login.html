@@ -1,0 +1,98 @@
+﻿<!DOCTYPE html>
+<html class="" lang="en">
+<head>
+    <title>数码商城</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" th:href="@{assets/css/bootstrap.min.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{assets/css/all.min.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{assets/css/owl.theme.default.min.css}">
+    <link rel="shortcut icon" type="image/x-icon" th:href="@{assets/img/Favicon.ico}">
+    <link rel="stylesheet" type="text/css" th:href="@{assets/css/animate.min.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{assets/css/fontawesome.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{assets/css/fontawesome.min.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{assets/css/style.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{assets/css/media.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{assets/css/responsive.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{assets/css/owl.carousel.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{assets/css/owl.theme.default.css}">
+</head>
+<body>
+<div th:insert="svg::svg"></div>
+<!--header start-->
+<div th:insert="header::header"></div>
+<!--header end-->
+
+<!-- vertical menu start-->
+<div th:insert="menu::menu"></div>
+<!-- vertical menu end -->
+
+
+<!-- login page -->
+<div id="login_page" class="login-page animate__animated animate__fadeInUp">
+
+    <!--登录div-->
+    <div class="container custom_container ">
+        <h3 class="text-center">登录</h3>
+        <div id="login" class="page-content card card-block p-3 p-sm-4 ">
+            <form class="needs-validation " method="post" th:action="@{/dologin}" novalidate>
+                <div class="form-group">
+                    <label for="username" class="font-weight-bolder">用户名</label>
+                    <input type="text" class="form-control" id="username"  name="username"
+                           required>
+                    <div class="invalid-feedback">Please Enter your Account Name.</div>
+                </div>
+                <div class="form-group font-weight-bolder">
+                    <label for="password" class="font-weight-bolder">密码</label>
+                    <input type="password" class="form-control" id="password" name="password" required>
+                    <div class="invalid-feedback">Please enter your password.</div>
+                </div>
+                <div class="form-group form-check">
+                    <input type="checkbox" class="form-check-input" id="user_check">
+                    <label class="form-check-label" for="user_check">记住我</label>
+                </div>
+                <input type="submit" name="submit" class="btn btn-primary mb-3" value="登录">
+                <div class="pass_acc border-top pt-3">
+                    <span class="forgot_password font-weight-bolder"><a
+                            th:href="@{/forgot}">忘记密码</a></span>
+                    <span class="no_account float-right font-weight-bolder"><a th:href="@{/registration}">注册</a></span>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<!--end footer-->
+<div th:insert="footer::footer"></div>
+<script th:src="@{assets/js/jquery-3.4.1.min.js}"></script>
+<script th:src="@{assets/js/owl.carousel.js}"></script>
+<script th:src="@{assets/js/bootstrap.min.js}"></script>
+<script th:src="@{assets/js/popper.min.js}"></script>
+<script th:src="@{assets/js/all.min.js}"></script>
+<script th:src="@{assets/js/index.js}"></script>
+<script th:src="@{assets/js/wow.min.js}"></script>
+
+<script>
+    // Disable form submissions if there are invalid fields
+    (function () {
+        'use strict';
+        window.addEventListener('load', function () {
+            // Get the forms we want to add validation styles to
+            let forms = document.getElementsByClassName('needs-validation');
+            // Loop over them and prevent submission
+            let validation = Array.prototype.filter.call(forms, function (form) {
+                form.addEventListener('submit', function (event) {
+                    if (form.checkValidity() === false) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                    }
+                    form.classList.add('was-validated');
+                }, false);
+            });
+        }, false);
+    })();
+</script>
+
+</body>
+</html>

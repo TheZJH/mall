@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>menu</title>
+    <link rel="stylesheet" type="text/css" th:href="@{assets/css/bootstrap.min.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{assets/css/all.min.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{assets/css/owl.theme.default.min.css}">
+    <link rel="shortcut icon" type="image/x-icon" th:href="@{assets/img/Favicon.ico}">
+    <link rel="stylesheet" type="text/css" th:href="@{assets/css/animate.min.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{assets/css/fontawesome.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{assets/css/fontawesome.min.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{assets/css/style.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{assets/css/media.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{assets/css/responsive.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{assets/css/owl.carousel.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{assets/css/owl.theme.default.css}">
+</head>
+<body>
+<div th:fragment="menu">
+    <!-- vertical menu start-->
+    <div id="sp_vertical_menu" class="container custom_container menu_slider d-xl-none d-lg-none d-md-block my-0">
+        <div class="row">
+            <div class="col-lg-3 vertical_menu ">
+                <div class="v_menu bg-white rounded">
+                    <div class="cat_menu bg-warning rounded-top"><a
+                            class="pe-auto text-uppercase d-md-none d-sm-none d-none d-lg-block font-weight-bold"
+                            data-toggle="collapse" href="#vartical_collapse" role="button" aria-expanded="false"
+                            aria-controls="vartical_collapse"><i class="fas fa-bars"></i>所有商品</a></div>
+
+                    <div class="navbar-header d-xl-none d-lg-none">
+                        <button type="button" class="btn-navbar navbar-toggle" onClick="openNav()"
+                                data-toggle="collapse"
+                                data-target=".navbar-ex1-collapse"><i class="fas fa-bars"></i></button>
+                    </div>
+                    <div class="collapse" id="vartical_collapse">
+                        <div id="mySidenav" class="sidenav	">
+                            <div class="close-nav d-xl-none d-lg-none">
+                                <span class="categories">Category</span>
+                                <a href="javascript:void(0)" class="closebtn pull-right" onClick="closeNav()"><i
+                                        class="fas fa-times"></i></a>
+                            </div>
+
+                            <ul class="vertical_main_menu sp_menu navbar navbar-nav">
+                                <li class="dropdown mega_menu m1_menu level-1 font-weight-bolder">
+                                    <a class="dropdown-toggle" href="single-product.html" role="button"
+                                       data-toggle="dropdown" aria-expanded="false"><i class="fas fa-mobile-alt"></i>手机&nbsp;<span
+                                            class="float-right mt-1"><i class="fas fa-angle-down"></i></span></a>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <ul class="row mx-0">
+                                                <li class="mg_menu col-lg-6 col-md-12 ">
+                                                    <ul th:each="item:${brand1}">
+
+                                                        <li><a
+                                                                class="dropdown-item font-weight-bolder"
+                                                                th:text="${item.categoryName}"></a>
+
+                                                        </li>
+
+                                                    </ul>
+                                                </li>
+
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown level-1 font-weight-bolder">
+                                    <a class="dropdown-toggle" href="blog.html" role="button" data-toggle="dropdown"
+                                       aria-expanded="false"><i class="far fa-hourglass"></i>blog&nbsp;<span
+                                            class="float-right mt-1"><i class="fas fa-angle-down"></i></span></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item font-weight-bolder" href="blog.html">blog</a></li>
+                                        <li><a class="dropdown-item font-weight-bolder" href="blog-left-sidebar.html">left
+                                            sidebar</a></li>
+                                        <li><a class="dropdown-item font-weight-bolder" href="blog-right-sidebar.html">right
+                                            sidebar</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown level-1 font-weight-bolder">
+                                    <a class="dropdown-toggle" href="shop-left-sidebar.html" role="button"
+                                       data-toggle="dropdown" aria-expanded="false"><i
+                                            class="fas fa-laptop"></i>电脑&nbsp;<span class="float-right mt-1"><i
+                                            class="fas fa-angle-down"></i></span></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item font-weight-bolder" href="shop-left-sidebar.html">left
+                                            sidebar</a></li>
+                                        <li><a class="dropdown-item font-weight-bolder" href="shop-right-sidebar.html">right
+                                            sidebar</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown mega_menu level-1 font-weight-bolder">
+                                    <a class="dropdown-toggle" href="single-product.html" role="button"
+                                       data-toggle="dropdown" aria-expanded="false"><i class="fas fa-mobile-alt"></i>平板&nbsp;<span
+                                            class="float-right mt-1"><i class="fas fa-angle-down"></i></span></a>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <ul class="row mx-0">
+                                                <li class="mg_menu col-lg-4 col-md-12 ">
+                                                    <ul>
+                                                        <li class="h_title text-uppercase font-weight-bold border-bottom">
+                                                            fashion
+                                                        </li>
+                                                        <li><a class="dropdown-item font-weight-bolder"
+                                                               href="single-product.html">Laptop</a></li>
+                                                        <li><a class="dropdown-item font-weight-bolder"
+                                                               href="single-product.html">head phone</a></li>
+                                                        <li><a class="dropdown-item font-weight-bolder"
+                                                               href="single-product.html">computer</a></li>
+                                                        <li><a class="dropdown-item font-weight-bolder"
+                                                               href="single-product.html">chair</a></li>
+                                                        <li><a class="dropdown-item font-weight-bolder"
+                                                               href="single-product.html">mobile</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li class="mg_menu col-lg-4 col-md-12">
+                                                    <ul>
+                                                        <li class="h_title text-uppercase font-weight-bold border-bottom">
+                                                            fashion
+                                                        </li>
+                                                        <li><a class="dropdown-item font-weight-bolder"
+                                                               href="single-product.html">Laptop</a></li>
+                                                        <li><a class="dropdown-item font-weight-bolder"
+                                                               href="single-product.html">head phone</a></li>
+                                                        <li><a class="dropdown-item font-weight-bolder"
+                                                               href="single-product.html">computer</a></li>
+                                                        <li><a class="dropdown-item font-weight-bolder"
+                                                               href="single-product.html">chair</a></li>
+                                                        <li><a class="dropdown-item font-weight-bolder"
+                                                               href="single-product.html">mobile</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li class="mg_menu col-lg-4 col-md-12">
+                                                    <ul>
+                                                        <li><a href="single-product.html"><img
+                                                                src="assets/img/product/deal2.jpg"
+                                                                class="fst-image mx-auto d-block mb-1 img-fluid"
+                                                                alt="deal2"></a></li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown level-1 font-weight-bolder">
+                                    <a class="dropdown-toggle" href="#" role="button" data-toggle="dropdown"
+                                       aria-expanded="false"><i class="fas fa-laptop"></i>电视&nbsp;<span
+                                            class="float-right mt-1"><i class="fas fa-angle-down"></i></span></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item font-weight-bolder" href="about-us.html">about
+                                            us</a>
+                                        </li>
+                                        <li><a class="dropdown-item font-weight-bolder" href="login.html">login</a></li>
+                                        <li><a class="dropdown-item font-weight-bolder" href="registration.html">registration</a>
+                                        </li>
+                                        <li><a class="dropdown-item font-weight-bolder" href="single-product.html">single
+                                            product</a></li>
+                                        <li><a class="dropdown-item font-weight-bolder" href="single-blog.html">single
+                                            blog</a></li>
+                                        <li><a class="dropdown-item font-weight-bolder" href="cart.html">cart</a></li>
+                                        <li><a class="dropdown-item font-weight-bolder" href="compare.html">compare</a>
+                                        </li>
+                                        <li><a class="dropdown-item font-weight-bolder"
+                                               href="wishlist.html">wishlist</a>
+                                        </li>
+                                        <li><a class="dropdown-item font-weight-bolder" href="checkout.html">check
+                                            out</a>
+                                        </li>
+                                        <li><a class="dropdown-item font-weight-bolder" href="forgot.html">forgot
+                                            password</a></li>
+                                    </ul>
+                                </li>
+                                <li class="level-1 font-weight-bolder"><a href="single-product.html"><i
+                                        class="fas fa-tv"></i>家用电器</a></li>
+                                <li class="level-1 font-weight-bolder"><a href="single-product.html"><i
+                                        class="fas fa-headphones-alt"></i>耳机音响</a></li>
+                                <li class="level-1 font-weight-bolder"><a href="single-product.html"><i
+                                        class="far fa-clock"></i>穿戴</a></li>
+                                <li class="level-1 font-weight-bolder"><a href="shop-left-sidebar.html"><i
+                                        class="far fa-keyboard"></i>配件</a></li>
+                                <li class="level-1 font-weight-bolder"><a href="single-product.html"><i
+                                        class="fas fa-universal-access"></i>Sale and Offers</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div> <!-- v_menu bg-white rounded -->
+            </div> <!-- col-md-3 vertical_menu -->
+        </div>
+    </div>
+    <!-- vertical menu end -->
+</div>
+<script th:src="@{assets/js/jquery-3.4.1.min.js}"></script>
+<script th:src="@{assets/js/owl.carousel.js}"></script>
+<script th:src="@{assets/js/bootstrap.min.js}"></script>
+<script th:src="@{assets/js/popper.min.js}"></script>
+<script th:src="@{assets/js/all.min.js}"></script>
+<script th:src="@{assets/js/index.js}"></script>
+<script th:src="@{assets/js/wow.min.js}"></script>
+</body>
+</html>

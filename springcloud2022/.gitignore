@@ -1,0 +1,6 @@
+# Project exclude paths
+/cloud-api-commons/target/
+/.idea
+/cloud-consumer-order80/target
+/cloud-consumerzk-order81/target
+/cloud-consumerzk-order/target

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.thezjh.digitalmallportal.dao.AddressMapper">
+    <select id="getDefaultAddress" resultType="com.thezjh.digitalmallportal.entity.UserAddress">
+        select *
+        from user_address a
+                 left join users u on a.user_id = u.id
+        where u.id = #{userId}
+    </select>
+</mapper>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.thezjh.digitalmallportal.dao.OrderMapper">
+    <select id="getAllOrders" resultType="com.thezjh.digitalmallportal.entity.Orders">
+        select *
+        from orders;
+    </select>
+    <insert id="addOrder" parameterType="com.thezjh.digitalmallportal.entity.Orders">
+        insert into orders(user_id, shopping_id, payment)
+        values (#{userId}, #{shoppingId}, #{payment});
+    </insert>
+    <insert id="addOrderItem" parameterType="com.thezjh.digitalmallportal.entity.OrdersItem">
+
+    </insert>
+</mapper>

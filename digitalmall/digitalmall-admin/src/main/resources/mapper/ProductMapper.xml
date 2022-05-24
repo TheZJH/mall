@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.thezjh.digitalmall.dao.ProductMapper">
+    <select id="getAllProduct" resultType="com.thezjh.digitalmall.entity.Products">
+        select *
+        from products;
+    </select>
+    <delete id="deleteProduct" parameterType="integer">
+        delete
+        from products
+        where id = #{id};
+    </delete>
+    <insert id="addProduct" parameterType="com.thezjh.digitalmall.entity.Products">
+        insert into products (product_name, title, price, detail, stock, image)
+        values (#{productName}, #{title},
+                #{price}, #{detail}, #{stock}, #{image});
+    </insert>
+    <select id="getProduct" resultType="com.thezjh.digitalmall.entity.Products" parameterType="integer">
+        select *
+        from products
+        where id = #{id}
+    </select>
+</mapper>
