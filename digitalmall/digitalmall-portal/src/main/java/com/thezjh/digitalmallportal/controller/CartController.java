@@ -39,7 +39,7 @@ public class CartController {
         //将当前页面商品添加到购物车
         SysUser user = (SysUser) session.getAttribute("user");
 
-        Long userId = user.getId();
+        Integer userId = user.getId();
         log.info("当前用户：{}", userId);
         //查询用户购物车所有商品
         cartService.addShoppingCart(userId, productId);

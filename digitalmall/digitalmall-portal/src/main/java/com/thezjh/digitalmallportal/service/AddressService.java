@@ -13,5 +13,5 @@ public interface AddressService {
      * @param userId
      * @return
      */
-    UserAddress getDefaultAddress(Long userId);
+    UserAddress getDefaultAddress(Integer userId);
 }

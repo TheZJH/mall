@@ -16,5 +16,5 @@ public interface AddressMapper extends BaseMapper<UserAddress> {
      * @param userId
      * @return
      */
-    UserAddress getDefaultAddress(Long userId);
+    UserAddress getDefaultAddress(Integer userId);
 }

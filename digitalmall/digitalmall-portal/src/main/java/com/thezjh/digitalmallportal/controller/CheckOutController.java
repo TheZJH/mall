@@ -41,7 +41,7 @@ public class CheckOutController {
     public String checkout(@RequestParam("id") Integer productId, HttpSession session, Model model) {
         //获取用户id
         SysUser user = (SysUser) session.getAttribute("user");
-        Long userId = user.getId();
+        Integer userId = user.getId();
         UserAddress userAddress = addressService.getDefaultAddress(userId);
         //添加用户地址到model
         model.addAttribute("userAddress", userAddress);

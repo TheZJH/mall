@@ -17,7 +17,7 @@ public class AddressServiceImpl implements AddressService {
     private AddressMapper addressMapper;
 
     @Override
-    public UserAddress getDefaultAddress(Long userId) {
+    public UserAddress getDefaultAddress(Integer userId) {
         return addressMapper.getDefaultAddress(userId);
     }
 }
