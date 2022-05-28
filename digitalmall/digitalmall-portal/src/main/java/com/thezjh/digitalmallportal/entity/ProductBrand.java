@@ -9,12 +9,12 @@ import lombok.*;
 @Data
 public class ProductBrand {
 
-  private long id;
-  private String name;
-  private long productCount;
-  private String logo;
-  private long productId;
-  private long categoryId;
+    private Integer id;
+    private String name;
+    private long productCount;
+    private String logo;
+    private long productId;
+    private long categoryId;
 
 
 }

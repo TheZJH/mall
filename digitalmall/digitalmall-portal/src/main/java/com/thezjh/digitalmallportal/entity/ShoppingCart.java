@@ -1,15 +1,17 @@
 package com.thezjh.digitalmallportal.entity;
 
 
+import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 
 /**
  * @author thezjh
  */
 @Data
+@TableName("shopping_cart")
 public class ShoppingCart {
 
-    private long id;
+    private Integer id;
     private long userId;
     private long productId;
     private long checked;

@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class Orders {
 
-    private long id;
+    private Integer id;
     private long userId;
     private long shoppingId;
     private double payment;
@@ -23,6 +23,5 @@ public class Orders {
     private java.sql.Timestamp endTime;
     private java.sql.Timestamp createTime;
     private java.sql.Timestamp updateTime;
-
 
 }

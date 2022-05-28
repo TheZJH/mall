@@ -13,7 +13,7 @@ public class ProductCategory {
     private long status;
     private java.sql.Timestamp createTime;
     private java.sql.Timestamp updateTime;
-    private long id;
+    private Integer id;
     private long parentId;
     private long level;
 
