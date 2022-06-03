@@ -1,13 +1,11 @@
 package com.thezjh.digitalmallportal.controller;
 
-import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.thezjh.digitalmallportal.dao.ProductMapper;
 import com.thezjh.digitalmallportal.entity.Products;
 import com.thezjh.digitalmallportal.entity.SysUser;
 import com.thezjh.digitalmallportal.service.CartService;
 import com.thezjh.digitalmallportal.service.ProductService;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.boot.actuate.integration.IntegrationGraphEndpoint;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -34,7 +32,7 @@ public class CartController {
     @Resource
     private ProductMapper productMapper;
 
-    @GetMapping("/addCart")
+    @GetMapping("/cart/create")
     public String addCart(@RequestParam("id") Integer productId, Model model, HttpSession session) {
         //将当前页面商品添加到购物车
         SysUser user = (SysUser) session.getAttribute("user");

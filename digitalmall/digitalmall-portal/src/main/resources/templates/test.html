@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>测试</title>
+    <script th:src="@{assets/js/jquery-3.4.1.min.js}"></script>
+</head>
+<body>
+<input id="search" type="text" placeholder="search">
+<button onclick="update()">查找</button>
+</body>
+<script>
+    function update() {
+        let name = $("#search").val();
+        alert(name)
+        $.ajax({
+            type: 'get',
+            url: "/test/search",
+            data: {"name": name},
+        })
+    }
+</script>
+</html>

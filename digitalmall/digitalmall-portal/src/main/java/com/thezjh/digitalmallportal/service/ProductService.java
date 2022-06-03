@@ -26,6 +26,7 @@ public interface ProductService {
 
     /**
      * 添加商品
+     *
      * @param products
      * @return
      */
@@ -33,7 +34,15 @@ public interface ProductService {
 
     /**
      * 根据 id 获取商品
+     *
      * @return
      */
     Products getProduct(Integer id);
+
+    /**
+     * 查询商品
+     * @param name
+     * @return
+     */
+    List<Products> searchProducts(String name);
 }

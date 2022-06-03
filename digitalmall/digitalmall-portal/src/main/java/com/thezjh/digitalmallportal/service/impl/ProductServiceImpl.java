@@ -1,6 +1,8 @@
 package com.thezjh.digitalmallportal.service.impl;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.thezjh.digitalmallportal.dao.ProductMapper;
+import com.thezjh.digitalmallportal.entity.ProductBrand;
 import com.thezjh.digitalmallportal.entity.Products;
 import com.thezjh.digitalmallportal.service.ProductService;
 import lombok.extern.slf4j.Slf4j;
@@ -38,5 +40,13 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public Products getProduct(Integer id) {
         return productMapper.getProduct(id);
+    }
+
+    @Override
+    public List<Products> searchProducts(String name) {
+        QueryWrapper<Products> wrapper = new QueryWrapper<>();
+        wrapper.like("title", name);
+        List<Products> products = productMapper.selectList(wrapper);
+        return products;
     }
 }

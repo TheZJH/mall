@@ -3,18 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <title>header</title>
-    <link rel="stylesheet" type="text/css" th:href="@{assets/css/bootstrap.min.css}">
-    <link rel="stylesheet" type="text/css" th:href="@{assets/css/all.min.css}">
-    <link rel="stylesheet" type="text/css" th:href="@{assets/css/owl.theme.default.min.css}">
-    <link rel="shortcut icon" type="image/x-icon" th:href="@{assets/img/Favicon.ico}">
-    <link rel="stylesheet" type="text/css" th:href="@{assets/css/animate.min.css}">
-    <link rel="stylesheet" type="text/css" th:href="@{assets/css/fontawesome.css}">
-    <link rel="stylesheet" type="text/css" th:href="@{assets/css/fontawesome.min.css}">
-    <link rel="stylesheet" type="text/css" th:href="@{assets/css/style.css}">
-    <link rel="stylesheet" type="text/css" th:href="@{assets/css/media.css}">
-    <link rel="stylesheet" type="text/css" th:href="@{assets/css/responsive.css}">
-    <link rel="stylesheet" type="text/css" th:href="@{assets/css/owl.carousel.css}">
-    <link rel="stylesheet" type="text/css" th:href="@{assets/css/owl.theme.default.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/static/assets/css/bootstrap.min.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/static/assets/css/all.min.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/static/assets/css/owl.theme.default.min.css}">
+    <link rel="shortcut icon" type="image/x-icon" th:href="@{/static/assets/img/Favicon.ico}">
+    <link rel="stylesheet" type="text/css" th:href="@{/static/assets/css/animate.min.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/static/assets/css/fontawesome.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/static/assets/css/fontawesome.min.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/static/assets/css/style.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/static/assets/css/media.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/static/assets/css/responsive.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/static/assets/css/owl.carousel.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/static/assets/css/owl.theme.default.css}">
+
+
 </head>
 <body>
 <!-- header area start-->
@@ -81,8 +83,8 @@
             <div class="container custom_container header-top-container">
                 <div class="row">
                     <div class="col-xl-2 col-lg-2 col-6  head-logo">
-                        <div class="text-left header-top-left pt-2"><a href="index.html"><img
-                                src="assets/img/Hitech..png"
+                        <div class="text-left header-top-left pt-2"><a th:href="@{/index}"><img
+                                src="/static/assets/img/Hitech..png"
                                 class="img-responsive img"
                                 alt="Hitech"></a></div>
                     </div> <!-- col-xl-2 col-lg-2 col-md-2 col-sm-3 head-logo -->
@@ -92,22 +94,30 @@
                                 <div class="between-header border border-danger rounded mb-0 head-left">
 
                                     <select class="select-menu form-select d-none d-sm-block">
-                                        <option value="selected">all categories</option>
-                                        <option value="1">laptop</option>
-                                        <option value="2">headphone</option>
-                                        <option value="3">audio</option>
+                                        <option value="selected">所有分类</option>
+                                        <option value="1">手机</option>
+                                        <option value="2">电脑</option>
+                                        <option value="3">平板</option>
+                                        <option value="3">电视</option>
+                                        <option value="3">家用电器</option>
+                                        <option value="3">耳机音响</option>
+                                        <option value="3">穿戴</option>
+                                        <option value="3">配件</option>
                                     </select>
 
 
                                     <div class="input-group">
-                                        <input type="text" placeholder="search" class="form-control" aria-label="search"
-                                               aria-describedby="button-addon2">
-                                        <div class="input-group-btn">
-                                            <button type="button"
-                                                    class="btn btn-danger text-uppercase font-weight-normal">
-                                                search
-                                            </button>
-                                        </div>
+                                        <form th:action="@{/product/search}" method="get">
+                                            <input type="text" placeholder="请输入商品名" class="form-control"
+                                                   name="name"
+                                                   aria-label="search"
+                                                   aria-describedby="button-addon2" id="product_name">
+                                            <div class="input-group-btn">
+                                                <input type="submit"
+                                                       class="btn btn-danger text-uppercase font-weight-normal"
+                                                       value="提交"/>
+                                            </div>
+                                        </form>
                                     </div>
                                 </div>
                                 <!-- between-header text-left col-sm-8 head-left border border-danger rounded mb-0 -->
@@ -227,7 +237,7 @@
                                                            href="single-blog.html">single
                                         blog</a></li>
                                     <li class="d-block"><a class="dropdown-item font-weight-bolder"
-                                                           href="login.html">登录</a></li>
+                                                           th:href="@{/login}">登录</a></li>
                                     <li class="d-block"><a class="dropdown-item font-weight-bolder"
                                                            href="registration.html">注册</a></li>
                                     <li class="d-block"><a class="dropdown-item font-weight-bolder"
@@ -254,13 +264,14 @@
 
     </header> <!-- header -->
 </div>
+
 <!-- header area end -->
-<script th:src="@{assets/js/jquery-3.4.1.min.js}"></script>
-<script th:src="@{assets/js/owl.carousel.js}"></script>
-<script th:src="@{assets/js/bootstrap.min.js}"></script>
-<script th:src="@{assets/js/popper.min.js}"></script>
-<script th:src="@{assets/js/all.min.js}"></script>
-<script th:src="@{assets/js/index.js}"></script>
-<script th:src="@{assets/js/wow.min.js}"></script>
+<script th:src="@{/static/assets/js/jquery-3.4.1.min.js}"></script>
+<script th:src="@{/static/assets/js/owl.carousel.js}"></script>
+<script th:src="@{/static/assets/js/bootstrap.min.js}"></script>
+<script th:src="@{/static/assets/js/popper.min.js}"></script>
+<script th:src="@{/static/assets/js/all.min.js}"></script>
+<script th:src="@{/static/assets/js/index.js}"></script>
+<script th:src="@{/static/assets/js/wow.min.js}"></script>
 </body>
 </html>

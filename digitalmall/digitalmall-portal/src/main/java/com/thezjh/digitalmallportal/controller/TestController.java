@@ -2,6 +2,7 @@ package com.thezjh.digitalmallportal.controller;
 
 import com.baomidou.mybatisplus.core.conditions.Wrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.thezjh.digitalmallportal.common.Result;
 import com.thezjh.digitalmallportal.dao.BrandMapper;
 import com.thezjh.digitalmallportal.dao.CategoryMapper;
 import com.thezjh.digitalmallportal.dao.ProductMapper;
@@ -9,10 +10,13 @@ import com.thezjh.digitalmallportal.entity.ProductBrand;
 import com.thezjh.digitalmallportal.entity.ProductCategory;
 import com.thezjh.digitalmallportal.entity.Products;
 import com.thezjh.digitalmallportal.service.BrandService;
+import com.thezjh.digitalmallportal.service.ProductService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
 import java.util.ArrayList;
@@ -30,6 +34,9 @@ public class TestController {
 
     @Resource
     private ProductMapper productMapper;
+
+    @Resource
+    private ProductService productService;
 
     @Resource
     private CategoryMapper categoryMapper;
@@ -65,5 +72,16 @@ public class TestController {
         return "index";
     }
 
+    @GetMapping("/test/search")
+    @ResponseBody
+    public List<Products> searchTest(@RequestParam("name") String name) {
+        log.info(name);
+        List<Products> products = productService.searchProducts(name);
+        return products;
+    }
 
+    @GetMapping("/search")
+    public String getSearch() {
+        return "test";
+    }
 }
