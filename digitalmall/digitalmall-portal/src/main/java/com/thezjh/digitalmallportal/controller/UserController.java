@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
@@ -23,17 +24,29 @@ import java.util.Objects;
 public class UserController {
     @Resource
     private SysUserService userService;
-    @Resource
-    private UserMapper userMapper;
+
 
     @GetMapping("/login")
-    public String test() {
+    public String login() {
         return "login";
     }
 
     @GetMapping("/register")
     public String register() {
         return "registration";
+    }
+
+    /**
+     * 用户注册
+     *
+     * @param user
+     * @return
+     */
+    @PostMapping("/user/create")
+    public String addUser(SysUser user) {
+        userService.register(user);
+        log.info("添加的用户为:{}", user);
+        return "login";
     }
 
     @PostMapping("/dologin")

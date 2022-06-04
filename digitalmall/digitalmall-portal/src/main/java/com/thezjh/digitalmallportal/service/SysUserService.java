@@ -39,10 +39,18 @@ public interface SysUserService {
     Integer deleteUserById(Integer id);
 
     /**
-     * 管理员修改用户
+     * 登录方法
      *
-     * @param user
+     * @param username
+     * @param password
      * @return
      */
     SysUser login(String username, String password);
+
+    /**
+     * 注册用户
+     * @param user
+     * @return
+     */
+    Integer register(SysUser user);
 }

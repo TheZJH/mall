@@ -38,4 +38,9 @@ public class SysUserServiceImpl implements SysUserService {
 
         return userMapper.login(username, password);
     }
+
+    @Override
+    public Integer register(SysUser user) {
+        return userMapper.insert(user);
+    }
 }

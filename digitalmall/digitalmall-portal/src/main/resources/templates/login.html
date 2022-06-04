@@ -40,7 +40,7 @@
             <form class="needs-validation " method="post" th:action="@{/dologin}" novalidate>
                 <div class="form-group">
                     <label for="username" class="font-weight-bolder">用户名</label>
-                    <input type="text" class="form-control" id="username"  name="username"
+                    <input type="text" class="form-control" id="username" name="username"
                            required>
                     <div class="invalid-feedback">Please Enter your Account Name.</div>
                 </div>
@@ -57,7 +57,7 @@
                 <div class="pass_acc border-top pt-3">
                     <span class="forgot_password font-weight-bolder"><a
                             th:href="@{/forgot}">忘记密码</a></span>
-                    <span class="no_account float-right font-weight-bolder"><a th:href="@{/registration}">注册</a></span>
+                    <span class="no_account float-right font-weight-bolder"><a th:href="@{/register}">注册</a></span>
                 </div>
             </form>
         </div>
